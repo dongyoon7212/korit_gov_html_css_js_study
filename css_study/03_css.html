@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS 자식 선택자</title>
+        <style>
+            #container {
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            #container > p > span {
+                font-size: 18px;
+                color: orange;
+            }
+
+            #container > p:nth-child(2) {
+                border: 1px solid black;
+            }
+
+            #container > p:nth-child(3),
+            p:nth-child(4) {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>자식 선택자</h3>
+        <div id="container">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <span>Temporibus distinctio laborum officia quis vel?</span>
+                Vitae perspiciatis nemo impedit omnis aut consectetur, quisquam
+                autem ea voluptates reiciendis, laborum, recusandae dolorum quo!
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <span>Temporibus distinctio laborum officia quis vel?</span>
+                Vitae perspiciatis nemo impedit omnis aut consectetur, quisquam
+                autem ea voluptates reiciendis, laborum, recusandae dolorum quo!
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <span>Temporibus distinctio laborum officia quis vel?</span>
+                Vitae perspiciatis nemo impedit omnis aut consectetur, quisquam
+                autem ea voluptates reiciendis, laborum, recusandae dolorum quo!
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <span>Temporibus distinctio laborum officia quis vel?</span>
+                Vitae perspiciatis nemo impedit omnis aut consectetur, quisquam
+                autem ea voluptates reiciendis, laborum, recusandae dolorum quo!
+            </p>
+        </div>
+    </body>
+</html>
