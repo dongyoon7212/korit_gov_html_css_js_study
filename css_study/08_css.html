@@ -1,11 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #container {
+                width: 1000px;
+                height: 1000px;
+                background-color: tomato;
+            }
+
+            #header {
+                width: 1000px;
+                height: 200px;
+                background-color: blueviolet;
+            }
+
+            #main {
+                width: 1000px;
+                height: 800px;
+                background-color: violet;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            #header > div {
+                width: 1000px;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #header > div:nth-child(1) {
+                background-color: thistle;
+            }
+            #header > div:nth-child(2) {
+                background-color: turquoise;
+            }
+
+            #header > div > div {
+                width: 700px;
+                height: 70px;
+            }
+
+            #header > div > div:nth-child(1) {
+                background-color: steelblue;
+            }
+
+            #header > div:nth-child(1) > div {
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #header > div:nth-child(1) > div > input {
+                width: 650px;
+                height: 50px;
+            }
+
+            #header > div:nth-child(2) > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #header > div:nth-child(2) > div > ul {
+                width: 700px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            #header > div:nth-child(2) > div > ul > li {
+                width: 50px;
+                height: 50px;
+                background-color: skyblue;
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #content {
+                width: 650px;
+                height: 750px;
+                background-color: cornsilk;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            #side {
+                width: 300px;
+                height: 750px;
+                background-color: sienna;
+            }
+
+            .box_1 {
+                width: 600px;
+                height: 150px;
+                background-color: salmon;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .box_1 > div {
+                width: 270px;
+                height: 130px;
+                background-color: pink;
+            }
+
+            #box_2 {
+                width: 600px;
+                height: 350px;
+                background-color: tan;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            #box_2 > div {
+                width: 270px;
+                height: 160px;
+                background-color: olive;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div>
+                    <div>
+                        <input type="text" />
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <ul>
+                            <li>블로그</li>
+                            <li>카페</li>
+                            <li>뉴스</li>
+                            <li>메일</li>
+                            <li>증권</li>
+                            <li>웹툰</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main">
+                <div id="content">
+                    <div class="box_1">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div id="box_2">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="box_1">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div id="side"></div>
+            </div>
+        </div>
+    </body>
 </html>
