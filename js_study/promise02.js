@@ -18,21 +18,21 @@ function getData(num) {
 
 const promise = getData();
 
-// promise
-//     .then((data) => {
-//         console.log("첫번째 비동기 완료", data);
-//         return getData();
-//     })
-//     .then((data) => {
-//         console.log("두번째 비동기 완료", data);
-//     });
+promise
+    .then((data) => {
+        console.log("첫번째 비동기 완료", data);
+        return getData();
+    })
+    .then((data) => {
+        console.log("두번째 비동기 완료", data);
+    });
 
-// promise
-//     .then(() => getData(1))
-//     .then(() => getData(2))
-//     .then(() => getData(2))
-//     .then((data) => console.log(data))
-//     .catch((error) => console.log(error.message));
+promise
+    .then(() => getData(1))
+    .then(() => getData(2))
+    .then(() => getData(2))
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error.message));
 
 promise
     .then((data) => {
