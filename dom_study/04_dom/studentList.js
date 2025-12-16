@@ -1,3 +1,13 @@
+function handleDeleteOnclick(studentId) {
+    if (!confirm("정말 삭제하시겠습니까?")) {
+        return;
+    }
+
+    studentList = studentList.filter((student) => student.id !== studentId);
+
+    loadStudentList();
+}
+
 function loadStudentList() {
     const studentListHtml = studentList
         .map((student) => {
@@ -6,6 +16,7 @@ function loadStudentList() {
             return `
             <li>
                 ${text}
+                <button onclick="handleDeleteOnclick(${student.id})">삭제</button>
             </li>
         `;
         })
