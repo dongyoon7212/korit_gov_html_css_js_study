@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="container">
+            <div id="todo_register_container">
+                <div class="title">투두 등록</div>
+                <div id="todo_register_box">
+                    <div id="sub_title_box">
+                        <div>할일을 등록해주세요.</div>
+                        <div>오늘은 무슨 일을 해야하나요?</div>
+                    </div>
+                    <div id="input_btn_box">
+                        <input type="text" placeholder="할일 입력" />
+                        <button>등록하기</button>
+                    </div>
+                </div>
+            </div>
+            <div id="todo_list_container">
+                <div class="title">투두 목록</div>
+                <div id="todo_list_box">
+                    <ul id="todo_list">
+                        <li>
+                            <div class="todo_box">
+                                <div class="todo_date">25년 12월 17일 (수)</div>
+                                <div class="todo">
+                                    <div class="control-container">
+                                        <input
+                                            type="checkbox"
+                                            id="todo_1"
+                                            class="screen-reader" />
+                                        <div class="label-box">
+                                            <span
+                                                class="check-icon"
+                                                aria-hidden="true"></span>
+                                            <label for="todo_1"
+                                                >집에 가서 쿨쿨 자기</label
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="todo_btn_box">
+                                        <button>삭제</button>
+                                        <button>수정</button>
+                                    </div>
+                                </div>
+                                <div class="todo">
+                                    <div class="control-container">
+                                        <input
+                                            type="checkbox"
+                                            id="todo_2"
+                                            class="screen-reader" />
+                                        <div class="label-box">
+                                            <span
+                                                class="check-icon"
+                                                aria-hidden="true"></span>
+                                            <label for="todo_2"
+                                                >일찍 집으로 가기</label
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="todo_btn_box">
+                                        <button>삭제</button>
+                                        <button>수정</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

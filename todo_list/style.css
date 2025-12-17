@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #efefef;
+    display: flex;
+}
+
+#todo_register_container {
+    width: 900px;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 100px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    width: 700px;
+    height: 38px;
+    font-weight: 700;
+    font-size: 32px;
+    color: #717171;
+}
+
+#todo_register_box {
+    width: 700px;
+    height: 397px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sub_title_box > div:nth-child(1) {
+    font-size: 64px;
+    font-weight: 700;
+    color: #7744ff;
+}
+
+#sub_title_box > div:nth-child(2) {
+    font-size: 32px;
+    font-weight: 500;
+    color: #7c7c7c;
+}
+
+#input_btn_box {
+    width: 700px;
+    height: 191px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#input_btn_box > input {
+    border: none;
+    border-radius: 20px;
+    height: 79px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+#input_btn_box > input:focus {
+    outline: none;
+}
+
+#input_btn_box > button {
+    border: none;
+    background-color: #7744ff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 80px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease-in-out;
+}
+
+#input_btn_box > button:hover {
+    background-color: #5f36cc;
+}
+
+#todo_list_container {
+    width: 1020px;
+    height: 100%;
+    padding: 100px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+#todo_list_box {
+    width: 900px;
+    height: 782px;
+    background-color: antiquewhite;
+}
+
+#todo_list {
+    padding: 0;
+    margin: 0;
+}
+
+#todo_list > li {
+    list-style: none;
+}
+
+.todo_box {
+    width: 900px;
+    height: 279px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todo_date {
+    font-size: 24px;
+    font-weight: 500;
+    color: #7c7c7c;
+}
+
+.todo {
+    width: 900px;
+    height: 93px;
+    border-radius: 20px;
+    padding: 20px 32px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.todo > input {
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #e5dcff;
+    border-radius: 100px;
+}
+
+.todo_btn_box {
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ========================== 체크박스 커스텀 CSS ======================== */
+.control-container {
+    display: flex;
+    position: relative;
+}
+.control-container + .control-container {
+    margin-top: 0.7em;
+}
+.screen-reader {
+    /* 스크린 리더를 고려해서 체크박스를 화면에서 숨김 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    margin: -1px;
+    clip-path: inset(50%);
+}
+.label-box {
+    position: relative;
+}
+.check-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f4f1ff;
+    border: 2px solid #e5dcff;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.check-icon::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    width: 30%;
+    height: 55%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-70%) rotateZ(40deg);
+    border-right: 2px solid #e5dcff;
+    border-bottom: 2px solid #e5dcff;
+}
+label {
+    padding-left: 2.2em;
+    position: relative;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 400;
+    color: #363636;
+}
+[type="checkbox"]:checked + .label-box .check-icon {
+    border-color: #7744ff;
+}
+[type="checkbox"]:checked + .label-box .check-icon::before {
+    border-color: #7744ff;
+}
