@@ -128,10 +128,11 @@ body {
 
 .todo_box {
     width: 900px;
-    height: 279px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .todo_date {
