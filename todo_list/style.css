@@ -1,5 +1,10 @@
 body {
     margin: 0;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 #container {
@@ -106,12 +111,15 @@ body {
 #todo_list_box {
     width: 900px;
     height: 782px;
-    background-color: antiquewhite;
+    overflow: auto;
 }
 
 #todo_list {
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 #todo_list > li {
@@ -158,6 +166,41 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.todo_btn_box > button {
+    width: 100px;
+    height: 53px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.todo_btn_box > button:nth-child(1) {
+    background-color: #e5dcff;
+    color: #7744ff;
+}
+
+.todo_btn_box > button:nth-child(2) {
+    background-color: #7744ff;
+    color: #ffffff;
+}
+
+.todo_btn_box > button:nth-child(1):hover {
+    background-color: #ad8fff;
+    color: #472999;
+}
+
+.todo_btn_box > button:nth-child(2):hover {
+    background-color: #5f36cc;
 }
 
 /* ========================== 체크박스 커스텀 CSS ======================== */
@@ -218,4 +261,86 @@ label {
 }
 [type="checkbox"]:checked + .label-box .check-icon::before {
     border-color: #7744ff;
+}
+
+/* ================ 모달 CSS ==================== */
+#modal_container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #3636367a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal_box {
+    width: 600px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#modal_input_box > input {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    height: 79px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+#modal_input_box > input:focus {
+    outline: none;
+}
+
+#modal_btn_box {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+#modal_btn_box > button {
+    width: 100px;
+    height: 53px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+}
+
+#modal_btn_box > button:nth-child(1) {
+    background-color: #e5dcff;
+    color: #7744ff;
+}
+
+#modal_btn_box > button:nth-child(2) {
+    background-color: #7744ff;
+    color: #ffffff;
+}
+
+#modal_btn_box > button:nth-child(1):hover {
+    background-color: #ad8fff;
+    color: #472999;
+}
+
+#modal_btn_box > button:nth-child(2):hover {
+    background-color: #5f36cc;
 }
