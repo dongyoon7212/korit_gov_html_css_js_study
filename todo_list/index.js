@@ -1,8 +1,11 @@
 const addBtn = document.querySelector("#input_btn_box > button");
 const addTodoInput = document.querySelector("#input_btn_box > input");
 const todoListUl = document.querySelector("#todo_list");
+const modal = document.querySelector("#modal_container");
+const modalInput = document.querySelector("#modal_input_box > input");
 
 let todoList = [];
+let editTargetTodoId = 0;
 
 window.onload = () => {
     if (!localStorage.getItem("TodoList")) {
@@ -103,8 +106,12 @@ function todoRender() {
                                                 </div>
                                             </div>
                                             <div class="todo_btn_box">
-                                                <button>삭제</button>
-                                                <button>수정</button>
+                                                <button onclick="deleteClick(${
+                                                    todo.id
+                                                })">삭제</button>
+                                                <button onclick="openModalClick(${
+                                                    todo.id
+                                                })">수정</button>
                                             </div>
                                         </div>
                                 `;
@@ -129,4 +136,51 @@ function checkClick(todoId) {
     localStorage.setItem("TodoList", JSON.stringify(todoList));
 
     todoRender();
+}
+
+function deleteClick(todoId) {
+    if (!confirm("정말로 투두를 삭제하시겠습니까?")) {
+        return;
+    }
+    todoList = JSON.parse(localStorage.getItem("TodoList"));
+    todoList = todoList.filter((todo) => todo.id !== todoId);
+
+    localStorage.setItem("TodoList", JSON.stringify(todoList));
+    todoRender();
+}
+
+function editClick() {
+    if (modalInput.value === "") {
+        alert("수정할 내용을 입력해주세요.");
+        return;
+    }
+    if (!confirm("정말로 수정하시겠습니까?")) {
+        return;
+    }
+    todoList = JSON.parse(localStorage.getItem("TodoList"));
+
+    todoList = todoList.map((todo) => {
+        if (todo.id === editTargetTodoId) {
+            todo.content = modalInput.value;
+        }
+        return todo;
+    });
+
+    localStorage.setItem("TodoList", JSON.stringify(todoList));
+
+    todoRender();
+
+    cancelClick();
+}
+
+function openModalClick(todoId) {
+    modal.style.display = "flex";
+    editTargetTodoId = todoId;
+    todoList = JSON.parse(localStorage.getItem("TodoList"));
+    todo = todoList.find((todo) => todo.id === todoId);
+    modalInput.value = todo.content;
+}
+
+function cancelClick() {
+    modal.style.display = "none";
 }
