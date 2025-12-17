@@ -30,7 +30,7 @@ function addTodoBtnOnclick() {
     let month = ("0" + (today.getMonth() + 1)).slice(-2);
     let day = ("0" + today.getDate()).slice(-2);
 
-    let dateString = year + "-" + month + "-" + day + 1;
+    let dateString = year + "-" + month + "-" + day;
 
     const newTodo = {
         id: todoId,
@@ -70,22 +70,25 @@ function todoRender() {
 
     todoListUl.innerHTML = dateKeys
         .map((dateKey) => {
-            const todo = groupTodo[dateKey];
+            const todoList = groupTodo[dateKey];
             return `
                 <li>
                     <div class="todo_box">
                         <div class="todo_date">${dateKey}</div>
-                        ${todo
-                            .map((t) => {
+                        ${todoList
+                            .map((todo) => {
                                 return `
                                     <div class="todo">
                                             <div class="control-container">
                                                 <input
                                                     type="checkbox"
-                                                    id="todo_${t.id}"
+                                                    id="todo_${todo.id}"
                                                     class="screen-reader"
+                                                    onclick="checkClick(${
+                                                        todo.id
+                                                    })"
                                                     ${
-                                                        t.complete
+                                                        todo.complete
                                                             ? "checked"
                                                             : ""
                                                     }
@@ -94,8 +97,8 @@ function todoRender() {
                                                     <span
                                                         class="check-icon"
                                                         aria-hidden="true"></span>
-                                                    <label for="todo_${t.id}"
-                                                        >${t.content}</label
+                                                    <label for="todo_${todo.id}"
+                                                        >${todo.content}</label
                                                     >
                                                 </div>
                                             </div>
@@ -112,4 +115,18 @@ function todoRender() {
             `;
         })
         .join("");
+}
+
+function checkClick(todoId) {
+    todoList = JSON.parse(localStorage.getItem("TodoList"));
+    todoList = todoList.map((todo) => {
+        if (todo.id === todoId) {
+            todo.complete = !todo.complete;
+        }
+        return todo;
+    });
+
+    localStorage.setItem("TodoList", JSON.stringify(todoList));
+
+    todoRender();
 }
