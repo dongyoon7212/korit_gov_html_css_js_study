@@ -110,4 +110,24 @@ const discountProducts = products
         name: product.name,
         price: product.price * 0.9,
     }));
-console.log(discountProducts)
+console.log(discountProducts);
+
+// ===========================================================================
+
+// const [value, setValue] = useState("");
+
+const useState = (data) => {
+    const dataState = {
+        data: data,
+        setData: (d) => {
+            console.log(d, "데이터 set");
+        },
+    };
+
+    return [dataState.data, dataState.setData];
+};
+
+const [value, setValue] = useState(10);
+console.log(value);
+setValue(20);
+console.log(value);
