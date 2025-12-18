@@ -62,7 +62,7 @@ body {
 }
 
 #input_btn_box > input {
-    border: none;
+    border: 2px solid #dbdbdb;
     border-radius: 20px;
     height: 79px;
     background-color: #f7f7f7;
@@ -70,10 +70,16 @@ body {
     box-sizing: border-box;
     font-size: 32px;
     font-weight: 400;
+    transition: all 0.2s ease-in-out;
 }
 
 #input_btn_box > input:focus {
     outline: none;
+    border-color: #7744ff;
+}
+
+#input_btn_box > input:hover {
+    box-shadow: 0px 0px 11px 1px #7744ff;
 }
 
 #input_btn_box > button {
@@ -94,7 +100,8 @@ body {
 }
 
 #input_btn_box > button:hover {
-    background-color: #5f36cc;
+    /* background-color: #5f36cc; */
+    box-shadow: 0px 0px 11px 1px #7744ff;
 }
 
 #todo_list_container {
